@@ -19,6 +19,7 @@
           placeholder="Ingresa tus nombres completos"
           id="nombres"
           value=""
+          pattern="[A-Z a-z]+"
         > 
         <br>
         <label for="apellidos">Apellidos</label>
@@ -26,6 +27,7 @@
           type="text"
           placeholder="Ingrese apellidos"
           id="apellidos"
+          pattern="[A-Z a-z]{3,30}"
         >
         <br>
         <label>Correo:</label>
@@ -38,6 +40,7 @@
         <input
           type="password"
           placeholder="Ingrese una contraseña"
+          required
         >
         <br>
         <label>Edad</label>
