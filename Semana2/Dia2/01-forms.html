@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <h1>Formularios</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Registro de Usuarios</h2>
+      <form>
+        <label for="nombres">Nombres</label>
+        <input 
+          type="text"
+          placeholder="Ingresa tus nombres completos"
+          id="nombres"
+          value=""
+        > 
+        <br>
+        <label for="apellidos">Apellidos</label>
+        <input
+          type="text"
+          placeholder="Ingrese apellidos"
+          id="apellidos"
+        >
+        <br>
+        <label>Correo:</label>
+        <input
+          type="email"
+          placeholder="ingresa un correo valido"
+        > 
+        <br>
+        <label>Contraseña</label>
+        <input
+          type="password"
+          placeholder="Ingrese una contraseña"
+        >
+        <br>
+        <label>Edad</label>
+        <input 
+          type="number"
+          placeholder="Ingresa tu edad"
+          min="1"
+          max="120"
+        >
+        <br>
+        <h4>Datos Adicionales</h4>
+        <label>Fecha de Nacimiento</label>
+        <input
+          type="date"
+        >
+        <br>
+        <label>Teléfono</label>
+        <input
+          type="tel"
+          placeholder="Ingrese su teléfono"
+        >
+        <br>
+        <label>Género</label>
+        <br>
+        <input 
+        type="radio" 
+        name="genero"
+        value="M">Masculino
+        <br>
+        <input 
+        type="radio" 
+        name="genero"
+        value="F">Femenino
+        <br>
+        <input 
+        type="radio" 
+        name="genero"
+        value="ND">Prefiero no divulgarlo
+        <br>
+        <label>Departamento</label>
+        <br>
+        <select>
+          <option disabled selected>
+            Seleccionar...
+          </option>
+          <option value="AM">Amazonas</option>
+          <option value="AN">Ancash</option>
+          <option value="AP">Apurimac</option>
+          <option value="AR">Arequipa</option>
+          <option value="LI" disabled>Lima</option>
+          <option value="jm">-Jesús Maria</option>
+          <option value="sm">-San Miguel</option>
+        </select>
+        <br>
+        <label>Hobbies</label>
+        <br>
+        <label>Leer</label>
+        <input type="checkbox" value="leer">
+        <br>
+        <label>Jugar futbol</label>
+        <input type="checkbox" value="futbol">
+        <br>
+        <label>
+          tocar guitarra
+        </label>
+        <input type="checkbox" value="guitarra">
+        <br>
+        <label>Escuchar Música</label>
+        <input type="checkbox" value="musica">
+        <br>
+        <textarea placeholder="Describete">
+          
+        </textarea>
+        <br>
+        <label>Sube tu foto</label>
+        <input type="file">
+        <hr>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpiar">
+      </form>
+    </section>
+  </main>
+</body>
+</html>
