@@ -1,0 +1,27 @@
+h1{
+  font-family:Arial;
+}
+
+section{
+  background:aqua;
+}
+
+/* esto es una clase, 
+funciona para varios elementos
+
+.nombre_clase
+*/
+.resaltar{
+  background:yellow;
+}
+
+.textorojo{
+  color:red;
+}
+
+/* Para hacer referencia a un id, tengo que anteponer el # al nombre del id
+
+#nombre_id */
+#importante{
+  border:3px solid red;
+}

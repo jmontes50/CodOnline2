@@ -1,0 +1,48 @@
+/* REFERENCIAS */
+/* estoy seleccionando
+todos los h1 y todos los article */
+h1, article{
+  background:skyblue;
+}
+
+/* esto va a aplicar a todos los article que sean hijos de section */
+section article{
+  color:blue;
+}
+
+/* con > estoy seleccionando SOLO LOS PRIMEROS HIJOS que tiene la etiqueta OL */
+
+ol>li{
+  font-family:Arial;
+  color:orangered;
+}
+
+ol>ul>li{
+  color:violet;
+}
+
+ol>ul>li>span{
+  background:lightgreen;
+}
+
+ol>ul>li>#resaltar{
+  background: yellow;
+}
+
+/* este estilo aplica al primer p que este debajo de div
+
+al primer elemento debajo de otro
+*/
+div+p{
+  background:blueviolet;
+  color:white;
+}
+
+.seccion1>h2{
+  border:2px solid green;
+}
+
+h2{
+  border:3px solid peru !important;
+}
+
