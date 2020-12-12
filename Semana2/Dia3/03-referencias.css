@@ -46,3 +46,36 @@ h2{
   border:3px solid peru !important;
 }
 
+/* PSEUDOCLASES */
+
+/* He escogido un elemento que sea hijo y que este en la posición 3 */
+p:nth-child(3){
+  font-style:italic;
+  font-weight:bold;
+  color:lightcoral;
+}
+
+p:first-child{
+  color:salmon;
+  text-decoration: underline;
+  font-size:16px !important;
+}
+
+/* todos los elementos impares que seleccione */
+tr:nth-child(odd){
+  background:springgreen;
+}
+
+/* todos los elementos que sean pares */
+tr:nth-child(even){
+  background:lightcoral;
+}
+
+thead tr:nth-child(1){
+  background-color:darkgreen;
+  color:white;
+}
+
+p:nth-of-type(1){
+  font-size:34px;
+}

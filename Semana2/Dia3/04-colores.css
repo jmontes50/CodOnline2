@@ -1,0 +1,36 @@
+li:nth-child(1){
+  color:red;
+}
+
+li:nth-child(2){
+  color:blue;
+}
+
+/* cada par representa un color
+Rojo , Verde , Blue
+
+00 hasta FF
+*/
+li:nth-child(3){
+  color:#3f00ad;
+}
+
+li:nth-child(4){
+  color:#22ccf4;
+}
+
+/*0 al 255  */
+li:nth-child(5){
+  color:rgb(199, 21, 21);
+}
+
+/* rgba(red, green, blue, transparencia)
+
+0 a 1 con decimales*/
+li:nth-child(6){
+  background:rgba(199,21,21,0.5)
+}
+
+li:nth-child(7){
+  color:hsl(0,50%,25%);
+}
