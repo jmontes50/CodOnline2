@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      border:0;
+      padding:0;
+      box-sizing: border-box;
+      /* border:1px solid red; */
+      font-family: Arial;
+    }
+    .contenedor{
+      width: 900px;
+      /* margin:arribaabajo loscostados */
+      margin:0 auto;
+    }
+    ul{
+      display:flex;
+      width:500px;
+      justify-content: space-around;
+    }
+    li{
+      list-style-type: none;
+      padding:5px;
+    }
+    nav{
+      display:flex;
+      justify-content: space-between;
+      background:steelblue;
+      color:white;
+    }
+    ul>li:nth-child(5){
+      border:2px solid skyblue;
+      border-radius:10px;
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <nav>
+      <div class="logo">
+        LOGO
+      </div>
+      <div class="menu">
+        <ul>
+          <li>Link1</li>
+          <li>Link2</li>
+          <li>Link3</li>
+          <li>Link4</li>
+          <li>Link5</li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</body>
+</html>
