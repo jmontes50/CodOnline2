@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* position relative, aunque me permite mover, es una referencia para los absolute */
+      .papa{
+        width:500px;
+        height:4000px;
+        border:1px solid red;
+        position: relative;
+      }
+      .hijo{
+        width:100px;
+        height:100px;
+        border:1px solid blue;
+      }
+      .caja4{
+        /* crema de helado */
+        /* position:fixed; me permite cambiar la posición de un elemento respecto al navegador */
+        position:fixed;
+        /* inferior */
+        bottom:20px;
+        right:30px;
+        /* top, left */
+      }
+      .caja2{
+        position:relative;
+        top:20px;
+        left:10px;
+        background:yellow;
+        z-index:2;
+        /* margin-top:20px;
+        margin-left:10px; */
+      }
+      .caja1{
+        position:absolute;
+        top:40px;
+        left:30px;
+        background:orange;
+        z-index:3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="papa">
+      <div class="hijo caja1">cajita</div>
+      <div class="hijo caja2">cajita</div>
+      <div class="hijo caja3">cajita</div>
+      <div class="hijo caja4">cajita</div>
+    </div>
+  </body>
+</html>
