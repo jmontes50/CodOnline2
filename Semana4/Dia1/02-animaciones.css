@@ -19,9 +19,14 @@
   /* duracion de la animación en segundos o milisegundos */
   animation-duration: 6s;
   /* cyabtas veces quiero que se ejecute mi animación, si no pongo nada por defecto se pondrá 1 vez */
-  animation-iteration-count: infinite;
+  animation-iteration-count:infinite;
   /* transform: translate(50px, 100px) rotate(45deg); */
   /* recibe un angulo en #deg */
+  animation-delay:1s;
+  /* me permite dar una dirección de la animación */
+  animation-direction: reverse;
+
+  animation-timing-function: ease-in;
 }
 
 /* h2{
@@ -57,11 +62,9 @@
   75%{
     transform: translate(0px, 450px) rotate(180deg);
   }
-
   89%{
     transform: translate(0px, 450px) rotate(270deg)
   } 
-
   /* sube de nuevo */
   100%{
     transform: translate(0px, 0px) rotate(270deg);
