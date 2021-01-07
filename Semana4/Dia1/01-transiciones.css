@@ -5,12 +5,16 @@
   border:2px solid slateblue;
   border-radius:10px;
 
-  transition-duration: 2s;
-  /* las propiedades a indicar las separaremos por , y si queremos todas las propiedades, podemos indicar all */
-  transition-delay: 250ms;
-  transition-property: all;
+  /* transition-duration: 2s; */
+  /* delay es un retraso, una espera antes que comience la transición */
+  /* transition-delay: 250ms; */
+   /* las propiedades a indicar las separaremos por , y si queremos todas las propiedades, podemos indicar all */
+  /* transition-timing-function: ease; */
+  /* transition-property: all; */
   /* transition-property: width,height; */
 
+  /* transition: property duration delay timing-function */
+  transition: width 1s 250ms ease, height 2s 300ms ease;
 }
 
 /* hover aplicará estas propiedades en los elementos que tengan las clase .cuadrado cuando se les ponga el puntero del mouse encima */
@@ -18,4 +22,17 @@
   width:400px;
   height: 400px;
   background:red;
+}
+
+.circulo{
+  width:400px;
+  height:400px;
+  background:teal;
+  border:2px solid tomato;
+  transition:all 1s 250ms ease-in-out;
+}
+
+.circulo:hover{
+  border-radius:50%;
+  background:yellow;
 }
