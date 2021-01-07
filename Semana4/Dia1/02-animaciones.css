@@ -1,0 +1,70 @@
+/* Animación:
+1.- configuración de mi animación
+   - durar
+   -como va a ser el flujo
+   -sera infinita
+   -delay
+
+2.- fotogramas - keyframes
+  -un porcentaje % en números
+  {
+    propiedades de css
+  }
+  -*/ 
+
+#nave{
+  width:150px;
+
+  animation-name: mianimacion;
+  /* duracion de la animación en segundos o milisegundos */
+  animation-duration: 6s;
+  /* cyabtas veces quiero que se ejecute mi animación, si no pongo nada por defecto se pondrá 1 vez */
+  animation-iteration-count: infinite;
+  /* transform: translate(50px, 100px) rotate(45deg); */
+  /* recibe un angulo en #deg */
+}
+
+/* h2{
+  transform: translate(50px, 100px) rotate(45deg);
+} */
+
+@keyframes mianimacion{
+  /* dentro de estas llavecitas
+  definiremos nuestros frames */
+  /* N%{
+    propiedades:valores;
+  } */
+  0%{
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  /* se mueve derecha */
+  25%{
+    transform: translate(450px,0px);
+  }
+  /* giro */
+  30%{
+    transform:translate(450px,0px) rotate(90deg);
+  }
+  /* baja */
+  50%{
+    transform: translate(450px, 450px) rotate(90deg);
+  }
+  /* giro */
+  62%{
+    transform:translate(450px,450px) rotate(180deg);
+  }
+  /* izquierda */
+  75%{
+    transform: translate(0px, 450px) rotate(180deg);
+  }
+
+  89%{
+    transform: translate(0px, 450px) rotate(270deg)
+  } 
+
+  /* sube de nuevo */
+  100%{
+    transform: translate(0px, 0px) rotate(270deg);
+  }
+}
+
