@@ -1,0 +1,42 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+.contenedor{
+  height:750px;
+  border:2px solid gray;
+
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  /* areas */
+  grid-template-areas: "header header"
+                        "aside main" 
+                        "footer footer"
+}
+
+.caja1,.caja2,.caja3,.caja4{
+  border:2px solid purple;
+}
+
+.caja1{
+  background:blueviolet;
+  grid-area: header;
+}
+
+.caja2{
+  background:cadetblue;
+  grid-area: aside;
+}
+
+.caja3{
+  background:chocolate;
+  grid-area:main;
+}
+
+.caja4{
+  background: yellow;
+  grid-area:footer;
+}
