@@ -18,6 +18,9 @@ header{
 .cards{
   padding:20px 50px 50px 50px;
   text-align: center;
+  /* flex */
+  display:flex;
+  justify-content: space-between;
 }
 
 .card{
@@ -76,6 +79,39 @@ header{
   margin-top:5px;
   font-size:14px;
   color:#333;
+  /* texto transparente */
   visibility: hidden;
   opacity:0;
+}
+
+/* Aqui comienza la magia */
+
+.card:hover .card_imagen{
+  height:40%;
+}
+
+.card:hover .card_imagen img{
+  /* filter es un filtro para imagenes que puede modificar cosas como la saturación, el brillo, la opacidad, blur */
+  /* brightness(0 a 1) o de 0% a 100% */
+  filter: brightness(0.5);
+}
+
+.card:hover .card_info{
+  height:60%;
+}
+
+.card:hover .card_descripcion{
+  visibility: visible;
+  opacity: 1;
+}
+
+.card:hover{
+  box-shadow: 0 0 20px lightgrey;
+  transform: scale(1.05);
+}
+
+/* 1. Selecciono .card pero también!
+    2. voy a seleccionar todos los elementos que esten dentro de card  */
+.card, .card *{
+  transition: all 0.2s ease;
 }
