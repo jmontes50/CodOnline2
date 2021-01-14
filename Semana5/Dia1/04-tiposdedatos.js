@@ -30,4 +30,4 @@ var x;
 console.log(x);
 
 var y = null;
-console.log(null)
+console.log(null);
