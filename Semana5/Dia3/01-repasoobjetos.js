@@ -41,7 +41,7 @@ var restaurante = {
       precio:15.00
     }
   ],
-  //métodos
+  //métodos, simplemente son funciones que estan asignadas a una propiedad
   mostrar_info: function(){
     console.log("El chifa KA HING en la Av. Dolores dispone de 20 mesas")
   },
