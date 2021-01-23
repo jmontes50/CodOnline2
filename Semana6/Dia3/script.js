@@ -37,3 +37,28 @@ var platillos = [
     imagen:"https://jameaperu.com/wp-content/uploads/2020/03/picante-de-cuy_700x464.jpg"
   }
 ]
+//se va encargar de dibujar mis platillos en el HTML
+var divplatillos = document.getElementById("divplatillos");
+
+var tarjetasPlatillos = "";
+
+function imprimirPlatillos() {
+   for(var i = 0; i < platillos.length; i++){
+     //template string
+     tarjetasPlatillos = tarjetasPlatillos + 
+     `<div class="tarjetaplatillo">
+        <h4>${platillos[i].nombre}</h4>
+        <img class="imgplatillo" src="${platillos[i].imagen}">
+        <p>${platillos[i].descripcion}</p>
+        <label class="etiquetaplatillo" >Precio</label>
+        <span>${platillos[i].precio}</span>
+        <br>
+        <label class="etiquetaplatillo">Stock</label>
+        <span>${platillos[i].stock}</span>
+      </div>`
+   }
+
+   divplatillos.innerHTML = tarjetasPlatillos;
+}
+
+imprimirPlatillos();

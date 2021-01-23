@@ -1,0 +1,23 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+#divplatillos{
+  display:flex;
+  justify-content: space-around;
+}
+
+.tarjetaplatillo{
+  height:400px;
+  width:300px;
+  border:2px solid gray;
+  padding:10px;
+  border-radius:10px;
+}
+
+.imgplatillo{
+  width:280px;
+}
