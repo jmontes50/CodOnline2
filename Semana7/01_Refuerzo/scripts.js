@@ -39,6 +39,7 @@ function imprimirPLatillos() {
   //4.1.1 yo necesito llamar a mi función que obtiene los botones después de ya tenerlos en el DOm(Html)
   obtenerBotones();
 }
+//imprimirPLatillos no se ejecuta sola :D
 imprimirPLatillos();
 
 //4. vamos a crear una función que me permita obtener el evento click de cada boton agregado anteriormente.
@@ -69,8 +70,60 @@ function anadirACarrito(indice){
     platillos[indice].stock--
     //Para poder visualizar el cambio de stock, despues que he cambiado el stock de un platillo, vuelvo a imprimir todo gracias a imprimirPplatillos
     imprimirPLatillos();
+    //NT: de la parte 6 de abajo, ejecutamos la function imprimirCarrito para que cambie el contenido del divcarrito
+    imprimirCarrito();
   }
   // console.table(carrito)
 }
 
 //6. Creamos una función que se encargue de imprimir el carrito en divcarrito
+function imprimirCarrito(){
+  //contenido boleta seran los platillos en HTML
+  let contenidoBoleta = "";
+  //total Boleta sera el monto total
+  let totalBoleta = 0;
+  //6.1 si no hay productos en carrito dare un mensaje que diga que no hay nada todavia
+  if(carrito.length <= 0){
+    compra.innerHTML = "El carrito esta vacio"
+  }else{
+    //vamos a crear como una tabla para tenerlos productos listados
+    for(let x = 0; x < carrito.length; x++){
+      //agregamos por cada platillo en el carrito una fila con el nombre y precio de ese platillo
+      contenidoBoleta = contenidoBoleta + 
+      `<tr>
+        <td>${carrito[x].nombre}</td>
+        <td>${carrito[x].precio}</td>
+      </tr>
+      `
+      //acá iremos sumando el precio de todos los platillos dentro de carrito
+      totalBoleta = totalBoleta + carrito[x].precio
+    }
+    //Despues que he creado el conteido html de los platillos y he sumado el total
+    //crear el cuerpo para la boleta, en HTML
+    let boletaHtml = `
+    <table class="boleta">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+      <!-- Añadimos las filas y columnas que creamos antes -->
+        ${contenidoBoleta}
+        <tr>
+          <td>IGV</td>
+          <td>${totalBoleta*0.18}</td>
+        </tr>
+        <tr>
+          <td>TOTAL</td>
+          <td>${totalBoleta}</td>
+        </tr>
+      </tbody>
+    </table>
+    `
+    //añadimos el contenido de la boleta al divcarrito
+    compra.innerHTML = boletaHtml;
+  }
+}
+imprimirCarrito();
