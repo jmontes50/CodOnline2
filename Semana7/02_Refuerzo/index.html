@@ -11,8 +11,23 @@
     <div class="contenedor">
       <div id="divplatillos"></div>
       <div id="divcarrito"></div>
+      
     </div>
+    <!-- añadiendo la parte de mandar datos -->
+    <div class="contenedor">
+      <h4>Guardar Pedido</h4>
+      <br>
+      <!-- Los input me van a servir para obtener los datos que guardare en mockAPI, tener en cuenta los ID -->
+      <input type="text" placeholder="Nombre" id="nombre">
+      <input type="text" placeholder="DNI" id="dni">
+      <input type="date" placeholder="Fecha" id="fecha">
+      <br>
+      <!-- El boton ejecutara la función de enviar los datos a mockAPI -->
+      <button id="btnguardar">Guardar Pedido</button>
+    </div>
+    <!-- javascript -->
     <script src="platillos.js"></script>
+    <script src="comunicacion.js"></script>
     <script src="scripts.js"></script>
   </body>
 </html>

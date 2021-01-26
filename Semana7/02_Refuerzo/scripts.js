@@ -77,11 +77,12 @@ function anadirACarrito(indice){
 }
 
 //6. Creamos una función que se encargue de imprimir el carrito en divcarrito
+let totalBoleta = 0;
 function imprimirCarrito(){
   //contenido boleta seran los platillos en HTML
   let contenidoBoleta = "";
   //total Boleta sera el monto total
-  let totalBoleta = 0;
+  // let totalBoleta = 0; //esto lo he pasado afuera para utilizarlo globalmente
   //6.1 si no hay productos en carrito dare un mensaje que diga que no hay nada todavia
   if(carrito.length <= 0){
     compra.innerHTML = "El carrito esta vacio"
@@ -127,3 +128,22 @@ function imprimirCarrito(){
   }
 }
 imprimirCarrito();
+
+//Refuerzo 02--------------------------------------
+
+//1. Obtenemos los elementos que acabamos de crear
+let inputNombre = document.getElementById("nombre")
+let inputDni = document.getElementById("dni")
+let inputFecha = document.getElementById("fecha")
+let btnGuardar = document.getElementById("btnguardar")
+
+//2. yo quiero obtener los datos cuando de click al boton guardar pedido,entonces voy a llamar a un listener para escuchar el evento click
+btnGuardar.addEventListener("click", function(){
+  let nombre = inputNombre.value
+  let dni = inputDni.value
+  let fecha = inputFecha.value
+  //conversion fecha a segundos, para eso utilizamos getTime
+  //getTime() nos da la fecha en milisegundos asi que lo dividimos en 1000
+  let fechaConvertida = new Date(fecha).getTime() / 1000
+
+})
