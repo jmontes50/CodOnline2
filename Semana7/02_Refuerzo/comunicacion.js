@@ -20,15 +20,15 @@ function enviarBoleta(nombre,dni,fecha,carrito,total){
             //3.3 la propiedad responseText es la que tiene la respuesta de mockapi
             console.log(asistente.responseText)
         }
-
-        //4. configurar el request a mockapi, el metodo HTTP y hacia donde voy a enviar mi petición .open(METODO,URL)
-        asistente.open("POST", "https://600f6a6c6c21e1001704eaf0.mockapi.io/pedidos")
-        //4.1 configurar mis headers (guia de remision)
-        //vamos a indicar que estamos enviando, en este caso un JSON
-        asistente.setRequestHeader("Content-type","application/json")
-        //4.2 al mandar ya mandamos nustro objBoleta, pero como tenemos que mandarlo en un formato JSON, lo transformaremos de objeto a texto con JSON.stringify
-        let objAJSON = JSON.stringify(objBoleta)
-        //Ya transformado lo enviamos
-        asistente.send(objAJSON)
     })
+
+     //4. configurar el request a mockapi, el metodo HTTP y hacia donde voy a enviar mi petición .open(METODO,URL)
+     asistente.open("POST", "https://600f6a6c6c21e1001704eaf0.mockapi.io/pedidos")
+     //4.1 configurar mis headers (guia de remision)
+     //vamos a indicar que estamos enviando, en este caso un JSON
+     asistente.setRequestHeader("Content-type","application/json")
+     //4.2 al mandar ya mandamos nustro objBoleta, pero como tenemos que mandarlo en un formato JSON, lo transformaremos de objeto a texto con JSON.stringify
+     let objAJSON = JSON.stringify(objBoleta)
+     //Ya transformado lo enviamos
+     asistente.send(objAJSON)
 }

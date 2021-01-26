@@ -139,6 +139,7 @@ let btnGuardar = document.getElementById("btnguardar")
 
 //2. yo quiero obtener los datos cuando de click al boton guardar pedido,entonces voy a llamar a un listener para escuchar el evento click
 btnGuardar.addEventListener("click", function(){
+
   let nombre = inputNombre.value
   let dni = inputDni.value
   let fecha = inputFecha.value
@@ -146,4 +147,7 @@ btnGuardar.addEventListener("click", function(){
   //getTime() nos da la fecha en milisegundos asi que lo dividimos en 1000
   let fechaConvertida = new Date(fecha).getTime() / 1000
 
+  //YA EL FINAL
+  //voy a llamar a moi funcion enviarBoleta(nombre,dni,fecha,carrito,total) con todo lo que necesito pasarle
+  enviarBoleta(nombre,dni,fechaConvertida,carrito,totalBoleta);
 })
