@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <style>
+      .naranja {
+        background: orange;
+      }
+      .aqua {
+        background: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container-fluid">
+      <h2><code>col-xl</code></h2>
+      <h5>xl -> las columnas colapsan cuando el ancho es menor a 1200px</h5>
+      <div class="row">
+        <div class="col-xl-6 naranja">
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut, rerum.
+          </p>
+        </div>
+        <div class="col-xl-6 aqua">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil, et.
+          </p>
+        </div>
+      </div>
+      <hr>
+      <h2><code>col-lg</code></h2>
+      <h5>
+        lg -> las columnas van a colapsar cuando el ancho de la pantalla sea menor a 992px
+      </h5>
+      <div class="row">
+        <div class="col-lg-6 naranja">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, quos?
+          </p>
+        </div>
+        <div class="col-lg-6 aqua">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis.
+          </p>
+        </div>
+      </div>
+      <hr>
+      <h2><code>col-md</code></h2>
+      <h5>
+        md -> las columnas colapsan cuando la pantalla es menor a 768
+      </h5>
+      <div class="row">
+        <div class="col-md-9 naranja">
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem!
+          </p>
+        </div>
+      </div>
+      <hr>
+      <h2><code>col-sm</code></h2>
+      <h5>
+        sm - las columnas colapsan cuadno el ancho de la pantalla es menor a 576px
+      </h5>
+      <div class="row">
+        <div class="col-sm-8 naranja">
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi, veniam.
+          </p>
+        </div>
+      </div>
+      <hr>
+      <h2>Columnas con medidas combinadas</h2>
+      <h5>
+        Podemos combinar las clases previas, para que los div con la clase col ocupen diferentes columnas en diferentes breakpoints.
+        Si cambia el ancho, se pueden disponer de diferentes maneras
+      </h5>
+      <div class="row">
+        <div class="col-xl-7 col-lg-6 col-md-8 col-sm-12 naranja">
+          Gráfico, Imagen, Importante
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 aqua">
+          Texto Informativo, Importancia Media
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 naranja">
+          Botón Suscripción, Importancia Baja
+        </div>
+      </div>
+    </main>
+    <!-- final de js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
