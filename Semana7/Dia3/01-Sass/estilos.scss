@@ -1,0 +1,18 @@
+body{
+  background:skyblue;
+}
+
+// variables, $nombrevariable
+$colorprimario: #4432f4;
+$fuenteprimaria: Arial;
+$tamaniogeneral:16px;
+
+.texto{
+  color: $colorprimario;
+  font-family: $fuenteprimaria;
+  font-size:$tamaniogeneral;
+}
+
+.btn{
+  background: $colorprimario;
+}
