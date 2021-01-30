@@ -1,11 +1,5 @@
-body{
-  background:skyblue;
-}
-
-// variables, $nombrevariable
-$colorprimario: #4432f4;
-$fuenteprimaria: Arial;
-$tamaniogeneral:16px;
+//imports
+@import "./components/globals";
 
 .texto{
   color: $colorprimario;
@@ -15,4 +9,30 @@ $tamaniogeneral:16px;
 
 .btn{
   background: $colorprimario;
+  font-size:$tamaniogeneral * 0.75;
+}
+
+//anidacion
+//BEM BLOCK ELEMENT MODIFIER
+.perfil{ //block-bloque
+  &__imagen{ //element - elemento
+    border-radius:25px;
+
+    &:hover{//modifier - modificador
+      box-shadow:4px 4px 4px black;
+    }
+  }
+}
+
+//mixins
+//@mixin nombre_mixin
+//un mixin es como una funcion
+@mixin mixincuadrado($tamanio,$tamanio2){
+  width:$tamanio;
+  height:$tamanio2;
+}
+
+.cuadrado{
+  @include mixincuadrado(400px,300px);
+  border:2px solid orangered;
 }

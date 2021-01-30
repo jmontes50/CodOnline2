@@ -10,4 +10,18 @@ body {
 
 .btn {
   background: #4432f4;
+  font-size: 12px;
+}
+
+.perfil__imagen {
+  border-radius: 25px;
+}
+.perfil__imagen:hover {
+  box-shadow: 4px 4px 4px black;
+}
+
+.cuadrado {
+  width: 400px;
+  height: 300px;
+  border: 2px solid orangered;
 }
