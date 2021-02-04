@@ -44,13 +44,17 @@ var platillos = [
   }
 ]
 
+//3. usamos getElementsByClassName para obtener todos los botones con la clase anadir, esto se obtendrñan como una colección(arreglo) de elementos HTML
 function obtenerBotones() {
   var botonesPlatillos = document.getElementsByClassName("anadir");
-  // console.log(botonesPlatillos)
-  for(var j = 0; j < botonesPlatillos.length; j++){
+  console.log(botonesPlatillos)
+  //3.1 como obtengo los botones en forma de arreglo, le aplicamos un for para añadirles el addEventListener("click",func)
+  for(let j = 0; j < botonesPlatillos.length; j++){
     botonesPlatillos[j].addEventListener("click", function(){
+      //3.2 Utilizo getAttribute para obtener el valor del atributo "id-platillo"
       var idPlatillo = botonesPlatillos[j].getAttribute("id-platillo");
-      console.log(idPlatillo);
+      //3.3 como ya tengo el idPlatillo, voy a buscar con ese id el platillo para después reducir el stock
+      
     })
   }
   
@@ -84,10 +88,12 @@ function imprimirPlatillos() {
           Añadir al Carrito
         </button>
       </div>`
-      //**NT: al boton le he añadido una clase y una tributo id-platillo, la clase me servira para obtener todos los botones, después y poderles añadir un addEventListener y el atributo para poder obtener el id de cada platillo */
+      //**NT: al boton le he añadido una clase y un atributo id-platillo, la clase me servira para obtener todos los botones, después y poderles añadir un addEventListener y el atributo para poder obtener el id de cada platillo */
    }
    //2.5 añadirlo todo ese texto al contenido de divplatillos, esto los hacemos con innerHTML
    divplatillos.innerHTML = tarjetasPlatillos;
+   //2.6 con la función imprimirPlatillos, lo que hemos hecho es generar nuestros div, a partir de nuestro arreglo de platillos
+   //como los hemos generado de forma dinamica con JS, se nos complica poder obtener los botones para darles click, para eso tenemos la func: obtenerbotones()
    obtenerBotones();
 }
 imprimirPlatillos();
