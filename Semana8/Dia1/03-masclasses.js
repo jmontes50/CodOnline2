@@ -23,7 +23,6 @@ class Bodega {
     this.productos.push(productoNuevo);
     console.log("Producto agregado existosamente")
   }
-
 }
 
 let miBodega = new Bodega("De Don Pepé", "Av. Dolores")
@@ -50,3 +49,4 @@ console.table(miBodega)
 let otraBodega = new Bodega("Norka","Parque los palotes")
 
 console.table(otraBodega)
+
