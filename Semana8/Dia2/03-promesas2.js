@@ -11,7 +11,6 @@ let obtenerCliente = () => {
     }, 4000)
   })
 }
-
 let obtenerPedidos = () => {
   return new Promise((resolve, reject) => {
     let asistente = new XMLHttpRequest();
@@ -27,7 +26,6 @@ let obtenerPedidos = () => {
         }
       }
     })
-
     asistente.open("GET","https://600f6a6c6c21e1001704eaf0.mockapi.io/pedidos");
     asistente.send(null)
   })
