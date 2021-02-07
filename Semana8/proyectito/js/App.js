@@ -1,5 +1,6 @@
 let network = new Network()
 let interface = new Interface()
+let btnModal = document.getElementById("btnAgregarModal")
 
 let getProductos = () => {
   //1. se ejecuta Network con obtener Productos y me devuelve el arreglo de Objetos Producto de mockAPI
@@ -11,5 +12,12 @@ let getProductos = () => {
   })
   .catch(error => console.log(error))
 }
-
 getProductos()
+
+//obteniendo Modal
+let modal = new bootstrap.Modal(document.getElementById("modalProducto1"))
+
+//Abriendo el modal
+btnModal.addEventListener("click", ()=>{
+  modal.show();
+})
