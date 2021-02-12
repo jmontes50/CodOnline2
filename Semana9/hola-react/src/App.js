@@ -1,10 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+//import nombre_funcion from "ubicacion"
+import Hijo from "./Hijo"
 
-function App() {
+export default function App(){
+  
   return (
-   <p>Hola react</p>
-  );
-}
-
-export default App;
+   <div>
+    <Hijo/>
+    <hr/>
+    <p>Holaaaaaa</p>
+   </div>
+  )
+ }
