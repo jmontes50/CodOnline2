@@ -33,9 +33,10 @@ export default function App(){
       <hr/>
       {tarea}
       <hr/>
-      {lista.map((item)=>{
-        return (<p>{item}</p>)
-      })}
+      {/* iteradores para renderizar */}
+      {lista.map((item)=>(
+        <p>{item}</p>
+      ))}
     </div>
   )
 }
