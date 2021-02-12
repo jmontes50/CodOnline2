@@ -10,6 +10,12 @@ export default function App(){
   let [lista, setLista] = useState([])
   let titulo = "To-do App"
 
+  let agregarTarea = () =>{
+    //esta funcion se va a encargar de agregar tarea al estado de mi lista
+    //...lista <- desestructurando y agrego tarea
+    setLista([...lista, tarea])
+  }
+
   //componentes controlados
   //todo input debe estar amarrado a un estado
   return(
@@ -21,11 +27,15 @@ export default function App(){
         value={tarea}
         onChange={(e)=>{setTarea(e.target.value)}}
       />
-      <button onClick={()=>{setTarea("Comer")}}>
+      <button onClick={()=>{agregarTarea()}}>
         Agregar
       </button>
       <hr/>
       {tarea}
+      <hr/>
+      {lista.map((item)=>{
+        return (<p>{item}</p>)
+      })}
     </div>
   )
 }
