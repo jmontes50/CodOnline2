@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import ListaComponent from "./components/ListaComponent"
+import InputComponent from "./components/InputComponent"
 
 export default function App() {
   let [lista, setLista] = useState(["Estudiar","Ordenar"])
