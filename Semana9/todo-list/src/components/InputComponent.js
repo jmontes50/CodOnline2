@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
-export default function InputComponent({listaTareas}) {
-  console.log(listaTareas)
+export default function InputComponent({listaTareas, actualizarLista}) {
+
   //const [state, setState] = useState(estado inicial)
   const [tareaNueva, setTareaNueva] = useState("")
 
@@ -13,7 +13,7 @@ export default function InputComponent({listaTareas}) {
         value={tareaNueva}
         onChange={(e)=>{setTareaNueva(e.target.value)}}
       />
-      <button>
+      <button onClick={() => {actualizarLista([...listaTareas, tareaNueva])}}>
         Agregar
       </button>
     </div>

@@ -16,7 +16,7 @@ export default function App() {
       {/* Levantamiento de estado - lifting state */}
       <ListaComponent listaTareas={lista}/>
       <hr/>
-      <InputComponent listaTareas={lista}/>
+      <InputComponent listaTareas={lista} actualizarLista={actualizarLista}/>
     </div>
   )
 }
