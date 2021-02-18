@@ -3,7 +3,7 @@ import ListaComponent from "./components/ListaComponent"
 import InputComponent from "./components/InputComponent"
 
 export default function App() {
-  let [lista, setLista] = useState(["Estudiar","Ordenar"])
+  let [lista, setLista] = useState(["Estudiar","Ordenar","Jugar con Mascotas"])
 
   let actualizarLista = (arrTareas) => {
     setLista(arrTareas)
@@ -15,6 +15,8 @@ export default function App() {
       <br/>
       {/* Levantamiento de estado - lifting state */}
       <ListaComponent listaTareas={lista}/>
+      <hr/>
+      <InputComponent listaTareas={lista}/>
     </div>
   )
 }
