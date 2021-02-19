@@ -9,7 +9,7 @@ export default function routes() {
     <Fragment>
       {/* definir las rutas */}
       <Route path="/" exact component={HomeView} />
-      <Route path="/detalle" exact component={DetalleView} />
+      <Route path="/detalle/:id" exact component={DetalleView} />
     </Fragment>
   )
 }
