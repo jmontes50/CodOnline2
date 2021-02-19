@@ -1,0 +1,10 @@
+.btn-flores{
+  font-family: 'Oswald', sans-serif;
+  background-image:linear-gradient(to right, #DD5E89 0%, #F7BB97 51%, #DD5E89 100%);
+  border:1px solid #DD5E89;
+  font-size:16px;
+}
+
+.btn-flores:hover{
+  border:2px solid #b92b5a;
+}
