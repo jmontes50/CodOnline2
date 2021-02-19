@@ -1,0 +1,17 @@
+//Ruta Principal del BackEnd
+https://backfloresv1.herokuapp.com/api/v1
+->Servidor Funcionando
+
+//Ruta solo de documentación
+https://backfloresv1.herokuapp.com/doc/
+->Documentacion Swagger
+
+//Ruta Productos
+https://backfloresv1.herokuapp.com/api/v1/productos
+
+//Ruta Categorias
+https://backfloresv1.herokuapp.com/api/v1/categorias
+
+//Ruta del Repositorio
+https://github.com/jmontes50/backfloresv1
+->Por si desean descargarlo, se ejecuta con npm start
