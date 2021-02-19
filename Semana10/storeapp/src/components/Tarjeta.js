@@ -13,7 +13,7 @@ export default function Tarjeta({producto}) {
           </p>
           <Link 
           className="btn btn-primary btn-sm" 
-          to={`/detalle/${producto.id}`}
+          to={`/detalle/${producto._id}`}
           >
             Ver detalles
           </Link>

@@ -17,8 +17,21 @@ export default function DetalleView(props) {
   },[])
 
   return (
-    <Fragment>
-      <h1>{miProducto.nombre}</h1>
-    </Fragment>
+    <div className="mt-3">
+      <div className="row">
+        <div className="col-md-12 col-xl-6">
+          <img 
+            src={miProducto.imagen}
+            alt={miProducto.nombre}
+            className="img-fluid"
+          />
+        </div>
+        <div className="col-md-12 col-xl-6">
+          <h1 className="display-6">{miProducto.nombre}</h1>
+          <p className="lead">{miProducto.descripcion}</p>
+          <p className="font-weight-bold">Precio: S/ {miProducto.precio}</p>
+        </div>
+      </div>
+    </div>
   )
 }
