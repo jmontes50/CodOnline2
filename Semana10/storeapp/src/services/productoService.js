@@ -24,8 +24,21 @@ const obtenerProductoPorId = async (prod_id) => {
   }
 }
 
+const crearProducto = async (objProducto) => {
+  try {
+    let headers = {
+      "Content-Type":"application/json"
+    }//axios.post(URL, datos_a_enviar_json, {headers})
+    let {data} = await axios.post(URL, objProducto, {headers})
+    return data.content
+  } catch (error) {
+    return error
+  }
+}
+
 //export mis funciones en forma de un objeto
 export {
   obtenerProductos,
-  obtenerProductoPorId
+  obtenerProductoPorId,
+  crearProducto
 }
