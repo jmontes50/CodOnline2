@@ -1,6 +1,4 @@
 import React from 'react'
-import HomeView from "./views/HomeView"
-import DetalleView from "./views/DetalleView"
 
 import {Switch, BrowserRouter as Router} from "react-router-dom"
 import Routes from "./routes"
