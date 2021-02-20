@@ -11,7 +11,8 @@ export default function DetalleView(props) {
 
   const getProduct = async () => {
     let productoObtenido = await obtenerProductoPorId(productoId);
-    setMiProducto(productoObtenido);
+    setMiProducto(productoObtenido)
+    setEstaCargando(false)
   };
 
   useEffect(() => {
