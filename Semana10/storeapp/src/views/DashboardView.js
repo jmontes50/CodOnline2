@@ -21,7 +21,7 @@ export default function DashboardView() {
 
   //aqui va los columns de DataGrid
   let columns = [
-    { field: "nombre", headerName: "Nombre", width: 130 },
+    { field: "nombre", headerName: "Nombre", width: 400 },
     { field: "descripcion", headerName: "Descripción", width: 400 },
     { field: "precio", headerName: "Precio", width: 200 },
     {
@@ -54,7 +54,7 @@ export default function DashboardView() {
       <div className="row">
         <div className="col-sm-12 col-md-6 col-xl-4">
           <div className="d-grid">
-            <button className="btn btn-primary btn-lg">Crear Producto</button>
+            <button className="btn btn-primary mb-3">Crear Producto</button>
           </div>
         </div>
         {/* aqui va el datagrid */}
