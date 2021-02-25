@@ -31,13 +31,13 @@ export default function DashboardView() {
         //Aquí ya puedo poner JSX
         <div>
           <Link
-            className="btn btn-info mr-1"
+            className="btn btn-info mx-2"
             to={`/editarProducto/${params.value}`}
           >
             <i className="fas fa-pencil-alt"></i>
           </Link>
           <Link
-            className="btn btn-danger mr-1"
+            className="btn btn-danger"
             to={`/eliminarProducto/${params.value}`}
           >
             <i className="fas fa-trash"></i>
