@@ -1,17 +1,28 @@
 import React, {useState, useEffect} from 'react'
 import {obtenerProductos} from '../services/productoService'
+import { DataGrid } from '@material-ui/data-grid'
 
 export default function DashboardView() {
   const [productos, setProductos] = useState([])
 
   const getProducts = async () => {
     let response = await obtenerProductos()
-    setProductos(response)
+    let productosConId = response.map((prod) => {
+      return {...prod, id:prod._id}
+    })
+    setProductos(productosConId)
   }
 
   useEffect(() => {
     getProducts()
   }, [])
+
+  //aqui va los columns de DataGrid
+  let columns = [
+    { field: 'nombre', headerName: 'Nombre', width: 130},
+    { field: 'descripcion', headerName: 'Descripción', width: 400 },
+    { field: 'precio', headerName: 'Precio', width: 200 },
+  ]
 
   return (
     <div className="mt-3">
@@ -26,28 +37,9 @@ export default function DashboardView() {
             </button>
           </div>
         </div>
-        <div className="col-12">
-          {/* Mostrando Productos */}
-          <table className="table">
-            <thead>
-              <tr>
-                <th>Nombre</th>
-                <th>Descripcion</th>
-                <th>Precio</th>
-                <th>Opciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              {productos.map((prod, i) => (
-                <tr key={i}>
-                  <td>{prod.nombre}</td>
-                  <td>{prod.descripcion}</td>
-                  <td>{prod.precio}</td>
-                  <td></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        {/* aqui va el datagrid */}
+        <div style={{width:'100%', height:'600px'}}>
+          <DataGrid rows={productos} columns={columns} pageSize={8} />
         </div>
       </div>
     </div>
