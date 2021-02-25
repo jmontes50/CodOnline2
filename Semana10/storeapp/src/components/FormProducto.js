@@ -1,5 +1,8 @@
 import React,{useState, useEffect} from 'react'
 import {crearProducto} from "../services/productoService"
+import Swal from 'sweetalert2'
+//useHistory me permite redireccionar hacia una ruta directamente desde el codigo de react
+import {useHistory} from 'react-router-dom'
 
 export default function FormProducto() {
   //ESTE ESTADO va a controlar a todos los input, pero para hacerlo
@@ -9,6 +12,9 @@ export default function FormProducto() {
     precio:0,
     stock:0,
   })
+  //instanciando useHistory
+  let history = useHistory()
+
   //esta función se encargará de controlar los input, para esto recibirá el evento
   const actualizarInput = (e) => {
     setValue({
@@ -21,8 +27,18 @@ export default function FormProducto() {
   const manejarSubmit = async (e) => {
     e.preventDefault()
     let response = await crearProducto({...value})
-    console.log(response)
-    alert("Producto Creado!!")
+    // console.log(response)
+    // alert("Producto Creado!!")
+    Swal.fire({
+      icon: "success",
+      title: "Producto Creado!!!",
+      showConfirmButton:false,
+      timer:2000
+      //esta promesa se ejecuta despues que la alerta desaperece o el usuario interactua con ella
+    }).then(() => {
+      //.push(URL) es el método que me redirecciona hacia otra ruta
+      history.push('/dashboard')
+    })
   }
 
   return (

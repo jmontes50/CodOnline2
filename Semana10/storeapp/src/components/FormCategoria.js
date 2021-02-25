@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, {useState} from 'react'
 import {crearCategoria} from "../services/categoriaService"
 
 export default function FormCategoria() {
