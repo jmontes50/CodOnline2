@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {editarProducto} from "../services/productoService"
+import {editarProducto, obtenerProductoPorId} from "../services/productoService"
 import Swal from 'sweetalert2'
 import {useHistory} from 'react-router-dom'
 
@@ -21,6 +21,15 @@ export default function FormEditProducto({id}) {
       [e.target.name]: e.target.value
     })
   }
+
+  const getProductById = async () => {
+    let response = await obtenerProductoPorId(id)
+    console.log(response)
+  }
+
+  useEffect(() => {
+    getProductById()
+  },[])
 
   const manejarSubmit = async (e) => {
     e.preventDefault()
