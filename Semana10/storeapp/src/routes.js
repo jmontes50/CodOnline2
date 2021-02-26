@@ -7,6 +7,7 @@ import CrearCategoriaView from './views/CrearCategoriaView'
 import CrearProductoView from './views/CrearProductoView'
 import DashboardView from './views/DashboardView'
 import EditarProductoView from './views/EditarProductoView'
+import RegisterView from './views/RegisterView'
 
 export default function routes() {
   return (
@@ -18,6 +19,7 @@ export default function routes() {
       <Route path="/crearproducto" exact component={CrearProductoView} />
       <Route path="/dashboard" exact component={DashboardView} />
       <Route path="/editarproducto/:id" exact component={EditarProductoView} />
+      <Route path="/registrarse" exact component={RegisterView} />
     </Fragment>
   )
 }

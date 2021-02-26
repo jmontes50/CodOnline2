@@ -9,6 +9,7 @@ const config = {
   appId: "1:566336241471:web:ee542b7c941f5151d71d8a",
 };
 
+//Con esto inicializamos una instancia de Firebase dentro de nuestro proyecto React
 const fire = firebase.initializeApp(config)
 
 export {
