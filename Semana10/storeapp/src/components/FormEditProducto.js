@@ -24,7 +24,14 @@ export default function FormEditProducto({id}) {
 
   const getProductById = async () => {
     let response = await obtenerProductoPorId(id)
-    console.log(response)
+    let {nombre, descripcion, precio, stock} = response
+    //en objetos, si la propiedad y valor es lo mismo se puede reducir a una sola expresion
+    setValue({
+      nombre,
+      descripcion,
+      precio,
+      stock
+    })
   }
 
   useEffect(() => {
