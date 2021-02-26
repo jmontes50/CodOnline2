@@ -36,9 +36,22 @@ const crearProducto = async (objProducto) => {
   }
 }
 
+const editarProducto = async (objProducto, id) => {
+  try {
+    let headers = {
+      "Content-Type":"application/json"
+    }
+    let {data} = await axios.put(`${URL}/${id}`, objProducto, {headers})
+    return data.content
+  } catch (error) {
+    return error
+  }
+}
+
 //export mis funciones en forma de un objeto
 export {
   obtenerProductos,
   obtenerProductoPorId,
-  crearProducto
+  crearProducto,
+  editarProducto
 }

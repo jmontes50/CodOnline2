@@ -32,7 +32,7 @@ export default function DashboardView() {
         <div>
           <Link
             className="btn btn-info mx-2"
-            to={`/editarProducto/${params.value}`}
+            to={`/editarproducto/${params.value}`}
           >
             <i className="fas fa-pencil-alt"></i>
           </Link>
