@@ -45,7 +45,7 @@ export default function FormEditProducto({id}) {
     // alert("Producto Creado!!")
     Swal.fire({
       icon: "success",
-      title: "Producto Creado!!!",
+      title: "Producto Editado!!!",
       showConfirmButton:false,
       timer:2000
       //esta promesa se ejecuta despues que la alerta desaperece o el usuario interactua con ella
@@ -111,7 +111,7 @@ export default function FormEditProducto({id}) {
           />
         </div>
         <button className="btn btn-primary" type="submit">
-          Crear Producto
+          Editar Producto
         </button>
       </form>
     </div>
