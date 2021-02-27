@@ -21,9 +21,12 @@ const loginFire = (email, password) => {
 }
 
 //salir - logout
-
+const logoutFire = () => {
+  return fire.auth().signOut()
+}
 
 export {
   registroFire,
-  loginFire
+  loginFire,
+  logoutFire
 }
