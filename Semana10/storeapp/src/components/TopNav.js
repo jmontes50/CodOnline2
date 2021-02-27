@@ -24,6 +24,7 @@ export default function TopNav() {
           <span className="navbar-toggler-icon" />
         </button>
 
+        {/* //Agregar aquí Links */}
         <div className={`${estaColapsado ? 'collapse' : ''} navbar-collapse`} id="topnav">
           <Link className="nav-link text-dark" to='/login' >Login</Link>
         </div>
