@@ -1,16 +1,19 @@
-import React, {Fragment} from 'react'
-import {Route} from "react-router-dom"
+import React, { Fragment, useContext } from "react";
+import { Route, Redirect } from "react-router-dom";
+import { AuthFireContext } from "./context/authFireContext";
 // importando componente Vistas
-import HomeView from './views/HomeView'
-import DetalleView from './views/DetalleView'
-import CrearCategoriaView from './views/CrearCategoriaView'
-import CrearProductoView from './views/CrearProductoView'
-import DashboardView from './views/DashboardView'
-import EditarProductoView from './views/EditarProductoView'
-import RegisterView from './views/RegisterView'
-import LoginView from './views/LoginView'
+import HomeView from "./views/HomeView";
+import DetalleView from "./views/DetalleView";
+import CrearCategoriaView from "./views/CrearCategoriaView";
+import CrearProductoView from "./views/CrearProductoView";
+import DashboardView from "./views/DashboardView";
+import EditarProductoView from "./views/EditarProductoView";
+import RegisterView from "./views/RegisterView";
+import LoginView from "./views/LoginView";
 
-export default function routes() {
+export default function Routes() {
+  const { userId } = useContext(AuthFireContext); //con esto ya tengo el userId
+
   return (
     <Fragment>
       {/* definir las rutas */}
@@ -18,10 +21,20 @@ export default function routes() {
       <Route path="/detalle/:id" exact component={DetalleView} />
       <Route path="/crearcategoria" exact component={CrearCategoriaView} />
       <Route path="/crearproducto" exact component={CrearProductoView} />
-      <Route path="/dashboard" exact component={DashboardView} />
+      <Route path="/login" exact component={LoginView} />
       <Route path="/editarproducto/:id" exact component={EditarProductoView} />
       <Route path="/registrarse" exact component={RegisterView} />
-      <Route path='/login' exact component={LoginView} />
+      <Route
+        path="/dashboard"
+        exact
+        render={() => {
+          if(userId !== null){
+            return <DashboardView/>
+          }else{
+            return <Redirect to='/login'/>
+          }
+        }}
+      />
     </Fragment>
-  )
+  );
 }

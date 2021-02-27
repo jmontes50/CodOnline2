@@ -7,14 +7,14 @@ import AuthContextProvider from "./context/authFireContext";
 
 export default function App() {
   return (
-    <AuthContextProvider>
-      <Router>
+    <Router>
+      <AuthContextProvider>
         <div className="container">
           <Switch>
             <Routes />
           </Switch>
         </div>
-      </Router>
-    </AuthContextProvider>
+      </AuthContextProvider>
+    </Router>
   );
 }
