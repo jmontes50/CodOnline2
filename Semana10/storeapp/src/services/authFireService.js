@@ -16,10 +16,14 @@ const registroFire = (email, password) => {
 }
 
 //ingresar
+const loginFire = (email, password) => {
+  return fire.auth().signInWithEmailAndPassword(email, password)
+}
 
 //salir - logout
 
 
 export {
-  registroFire
+  registroFire,
+  loginFire
 }
