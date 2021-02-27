@@ -24,7 +24,7 @@ export default function LoginView() {
         timer:2000,
         showConfirmButton:false
       })
-      .then(()=>{//derspues que se muestra mi alerta, redirijo al usuario hacia /dashboard
+      .then(()=>{//después que se muestra mi alerta, redirijo al usuario hacia /dashboard
         history.push('/dashboard')
       })
     })
