@@ -6,9 +6,11 @@ export const AuthFireContext = createContext() //creo un contexto con este nombr
 const AuthContextProvider = (props) => {
   const [userId, setUserId] = useState(null) //estado global
 
+  let history = useHistory()
+
   const setAuthUserId = (id) => { //funcion que se encarga de actualizar el estado global
     setUserId(id) //actualizo el estado global
-    return useHistory.push('/')
+    return history.push('/') //me lleva a la ruta base
   }
 
   return(

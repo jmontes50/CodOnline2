@@ -11,7 +11,10 @@ export default function LoginView() {
   const login = (e) => {
     e.preventDefault()
     loginFire(email, password)
-    .then(rpta => console.log(rpta))
+    .then(rpta => {
+      console.log(rpta)
+      setAuthUserId(rpta.user.uid)
+    })
     .catch(error => console.log(error))
   }
 
