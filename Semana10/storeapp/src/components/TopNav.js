@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import iconito from "../assets/woman.png"; //para utilizar una imagen que este en mi proyecto tengo que importarlo
 import {AuthFireContext} from "../context/authFireContext"
 import NavAdmin from "./NavAdmin"
@@ -11,7 +11,9 @@ export default function TopNav() {
   const [estaColapsado, setEstaColapsado] = useState(true);
   const manejarColapso = () => setEstaColapsado(!estaColapsado);
 
-  const {userId} = useContext(AuthFireContext)
+  const {userId, setAuthUserId} = useContext(AuthFireContext)
+
+  let history = useHistory()
 
   const salir = () => {
     Swal.fire({
@@ -20,6 +22,26 @@ export default function TopNav() {
       showConfirmButton:true,
       confirmButtonText:'Si, deseo salir',
       showCancelButton:true
+    })
+    .then((result)=>{
+      if(result.isDismissed === true){
+        //si le doy a cancelar no hgo nada
+        return
+      }
+      logoutFire()
+      .then(() => {
+        setAuthUserId(null)//aquí vuelvo a cambiar el estado del contextuser a null
+        Swal.fire({
+          //ya cuando salga muestro otra alerta
+          icon:'success',
+          title:"Se deslogueo exitosamente",
+          showConfirmButton:false,
+          timer:2000
+        })
+        .then(()=>{
+          history.push('/')
+        })
+      })
     })
   }
 
@@ -43,6 +65,7 @@ export default function TopNav() {
 
         {/* //Agregar aquí Links */}
         <div className={`${estaColapsado ? 'collapse' : ''} navbar-collapse`} id="topnav">
+          
           {/* pregunto si estoy logueado y si no pues muestro los links de admin */}
           {userId !== null ? (<NavAdmin salir={salir} />) : <NavCliente/>}
         </div>

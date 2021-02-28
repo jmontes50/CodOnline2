@@ -6,7 +6,7 @@ export default function NavCliente() {
     <Fragment>
       <Link className="nav-link text-dark" to='/Login'>
         Login
-        </Link>
+      </Link>
     </Fragment>
   )
 }
