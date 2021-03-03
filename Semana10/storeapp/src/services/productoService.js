@@ -49,10 +49,27 @@ const editarProducto = async (objProducto, id) => {
   }
 }
 
+const subirArchivo = (imagen, refStorage) => {
+  return new Promise((resolve, reject) => {
+    const tarea = refStorage.put(imagen)
+
+    tarea.on(
+      'state_changed',
+      () => {},//aqui iría una función que observa la subida de mi archivo
+      (error) => {reject(error)}, //aqui manejamos si es que recibimos un error, por eso hace un reject
+      () => { //aqui ya podemos inspeccionar cuando el archivo ha terminado de subirse a firebase
+        tarea.snapshot.ref.getDownloadURL()
+        .then(urlImagen => resolve(urlImagen))
+      }
+    )
+  })
+}
+
 //export mis funciones en forma de un objeto
 export {
   obtenerProductos,
   obtenerProductoPorId,
   crearProducto,
-  editarProducto
+  editarProducto,
+  subirArchivo
 }
