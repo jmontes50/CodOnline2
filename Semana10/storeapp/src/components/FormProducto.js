@@ -1,8 +1,12 @@
 import React,{useState, useEffect} from 'react'
-import {crearProducto} from "../services/productoService"
+import {crearProducto, subirArchivo} from "../services/productoService"
 import Swal from 'sweetalert2'
 //useHistory me permite redireccionar hacia una ruta directamente desde el codigo de react
 import {useHistory} from 'react-router-dom'
+import Fire from "../config/Firebase"
+
+//esta variable me va a permitir para manejar mi archivo
+let imagenArchivo
 
 export default function FormProducto() {
   //ESTE ESTADO va a controlar a todos los input, pero para hacerlo
@@ -26,7 +30,12 @@ export default function FormProducto() {
 
   const manejarSubmit = async (e) => {
     e.preventDefault()
-    let response = await crearProducto({...value})
+    //subida de imagen
+    const refProductosStorage = Fire.storage().ref(`productos/${imagenArchivo.name}`) //crea mos la referencia
+    let urlImagenSubida = await subirArchivo(imagenArchivo, refProductosStorage) //aqui ya subo el archivo
+
+    //esta parte crea mi producto
+    let response = await crearProducto({...value, imagen:urlImagenSubida})
     // console.log(response)
     // alert("Producto Creado!!")
     Swal.fire({
@@ -39,6 +48,12 @@ export default function FormProducto() {
       //.push(URL) es el método que me redirecciona hacia otra ruta
       history.push('/dashboard')
     })
+  }
+
+  //obtengo la imagen del input file
+  const manejarImagen = (e) => {
+    let miImagen = e.target.files[0]
+    imagenArchivo = miImagen
   }
 
   return (
@@ -96,6 +111,18 @@ export default function FormProducto() {
             onChange={(e) => {actualizarInput(e)}}
           />
         </div>
+
+        <div className="mb-2">
+          <label className="form-label">
+            Imagen
+          </label>
+          <input
+            type="file"
+            className="form-control"
+            onChange={(e)=>{manejarImagen(e)}}
+          />
+        </div>
+
         <button className="btn btn-primary" type="submit">
           Crear Producto
         </button>
