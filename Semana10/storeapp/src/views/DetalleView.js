@@ -49,17 +49,25 @@ export default function DetalleView(props) {
               <p>Precio: S/ {miProducto.precio}</p>
               <p className="fw-bold">Comprar</p>
               <div>
-
-                <button className="btn btn-outline-dark btn-sm" onClick={() => {setCantidad(cantidad + 1)}}>
+                <button 
+                  className="btn btn-outline-dark btn-sm" 
+                  onClick={() => {setCantidad(cantidad + 1)}}
+                >
                   <i className="fas fa-plus"></i>
                 </button>
 
                 <span className="font-weight-bold mx-2">Cantidad: {cantidad}</span>
 
-                <button className="btn btn-outline-dark btn-sm" onClick={() => {reducirCantidad()}}>
+                <button 
+                  className="btn btn-outline-dark btn-sm" 
+                  onClick={() => {reducirCantidad()}}
+                >
                  <i class="fas fa-minus"></i>
                 </button>
               </div>
+              <button className="btn btn-danger btn-lg mt-2">
+                Comprar Ahora
+              </button>
             </div>
           </div>
         </div>
