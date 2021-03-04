@@ -15,7 +15,7 @@ export default function DetalleView(props) {
 
   const {carrito, anadirProducto} = useContext(CarritoContext)//obteniendo el contexto
 
-  let history = useHistory()//obtenemos historyu para redirigir al usuario despues de añadir un producto
+  let history = useHistory()//obtenemos history para redirigir al usuario despues de añadir un producto
 
   const getProduct = async () => {
     let productoObtenido = await obtenerProductoPorId(productoId);

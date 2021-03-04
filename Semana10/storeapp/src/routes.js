@@ -10,6 +10,7 @@ import DashboardView from "./views/DashboardView";
 import EditarProductoView from "./views/EditarProductoView";
 import RegisterView from "./views/RegisterView";
 import LoginView from "./views/LoginView";
+import CarritoView from "./views/CarritoView"
 
 export default function Routes() {
   const { userId } = useContext(AuthFireContext); //con esto ya tengo el userId
@@ -24,6 +25,7 @@ export default function Routes() {
       <Route path="/login" exact component={LoginView} />
       <Route path="/editarproducto/:id" exact component={EditarProductoView} />
       <Route path="/registrarse" exact component={RegisterView} />
+      <Route path="/carrito" exact component={CarritoView} />
       <Route
         path="/dashboard"
         exact
