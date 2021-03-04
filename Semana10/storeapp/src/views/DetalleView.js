@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext, Fragment } from "react";
 import { obtenerProductoPorId } from "../services/productoService";
 import Cargando from "../components/Cargando";
 import {CarritoContext} from "../context/carritoContext"
+import Swal from "sweetalert2"
+import {useHistory} from 'react-router-dom'
 
 export default function DetalleView(props) {
   // console.log(props.match.params.id)
@@ -13,6 +15,8 @@ export default function DetalleView(props) {
 
   const {carrito, anadirProducto} = useContext(CarritoContext)
 
+  let history = useHistory()
+
   const getProduct = async () => {
     let productoObtenido = await obtenerProductoPorId(productoId);
     setMiProducto(productoObtenido)
@@ -22,6 +26,22 @@ export default function DetalleView(props) {
   const anadirProductoAContext = () => {
     let productoAlCarrito = {...miProducto, cantidad:cantidad}
     anadirProducto(productoAlCarrito)
+    Swal.fire({
+      icon:'success',
+      title:'Producto Añadido!',
+      showConfirmButton:true,
+      showDenyButton:true,
+      confirmButtonText:'Seguir Comprando',
+      denyButtonText:'Ir al carrito'
+    }).then((resultado) => {
+      if(resultado.isConfirmed){
+        history.push('/')
+        //lo mando al home
+      }else if(resultado.isDenied){
+        //lo mando a la pagina de carrito que todavia no tenemos
+        // history.push('/carrito')
+      }
+    })
   }
 
   const reducirCantidad = () => {
@@ -70,7 +90,7 @@ export default function DetalleView(props) {
                   className="btn btn-outline-dark btn-sm" 
                   onClick={() => {reducirCantidad()}}
                 >
-                 <i class="fas fa-minus"></i>
+                 <i className="fas fa-minus"></i>
                 </button>
               </div>
               <button className="btn btn-danger btn-lg mt-2" onClick={()=>{anadirProductoAContext()}}>
