@@ -1,6 +1,7 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect, useContext, Fragment } from "react";
 import { obtenerProductoPorId } from "../services/productoService";
 import Cargando from "../components/Cargando";
+import {CarritoContext} from "../context/carritoContext"
 
 export default function DetalleView(props) {
   // console.log(props.match.params.id)
@@ -10,11 +11,18 @@ export default function DetalleView(props) {
   const [estaCargando, setEstaCargando] = useState(true)
   const [cantidad, setCantidad] = useState(1)
 
+  const {carrito, anadirProducto} = useContext(CarritoContext)
+
   const getProduct = async () => {
     let productoObtenido = await obtenerProductoPorId(productoId);
     setMiProducto(productoObtenido)
     setEstaCargando(false)
-  };
+  }
+
+  const anadirProductoAContext = () => {
+    let productoAlCarrito = {...miProducto, cantidad:cantidad}
+    anadirProducto(productoAlCarrito)
+  }
 
   const reducirCantidad = () => {
     if(cantidad === 1){ //reviso que cantidad no sea menor a 1
@@ -65,8 +73,8 @@ export default function DetalleView(props) {
                  <i class="fas fa-minus"></i>
                 </button>
               </div>
-              <button className="btn btn-danger btn-lg mt-2">
-                Comprar Ahora
+              <button className="btn btn-danger btn-lg mt-2" onClick={()=>{anadirProductoAContext()}}>
+                Añadir al Carrito
               </button>
             </div>
           </div>
