@@ -13,9 +13,9 @@ export default function DetalleView(props) {
   const [estaCargando, setEstaCargando] = useState(true)
   const [cantidad, setCantidad] = useState(1)
 
-  const {carrito, anadirProducto} = useContext(CarritoContext)
+  const {carrito, anadirProducto} = useContext(CarritoContext)//obteniendo el contexto
 
-  let history = useHistory()
+  let history = useHistory()//obtenemos historyu para redirigir al usuario despues de añadir un producto
 
   const getProduct = async () => {
     let productoObtenido = await obtenerProductoPorId(productoId);
@@ -23,10 +23,10 @@ export default function DetalleView(props) {
     setEstaCargando(false)
   }
 
-  const anadirProductoAContext = () => {
-    let productoAlCarrito = {...miProducto, cantidad:cantidad}
-    anadirProducto(productoAlCarrito)
-    Swal.fire({
+  const anadirProductoAContext = () => { 
+    let productoAlCarrito = {...miProducto, cantidad:cantidad} //creo un nuevo obj con la cantidad y el producto
+    anadirProducto(productoAlCarrito) //añado el producto al carrito
+    Swal.fire({ //alerta!
       icon:'success',
       title:'Producto Añadido!',
       showConfirmButton:true,
