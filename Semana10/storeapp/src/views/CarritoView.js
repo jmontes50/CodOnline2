@@ -27,7 +27,7 @@ export default function CarritoView() {
               <td>{item.precio * item.cantidad}</td>
               <td>
                 <button className="btn btn-danger btn-sm">
-                  Eliminar
+                  <i className="fas fa-trash"></i>
                 </button>
               </td>
             </tr>

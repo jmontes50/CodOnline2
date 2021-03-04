@@ -39,7 +39,7 @@ export default function DetalleView(props) {
         //lo mando al home
       }else if(resultado.isDenied){
         //lo mando a la pagina de carrito que todavia no tenemos
-        // history.push('/carrito')
+        history.push('/carrito')
       }
     })
   }
