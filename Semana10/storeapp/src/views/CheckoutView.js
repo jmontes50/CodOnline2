@@ -6,11 +6,11 @@ export default function CheckoutView() {
   const { carrito } = useContext(CarritoContext);
   let carritoTmp = [...carrito];
   let totalCarrito = 0
-  if(carrito.length > 1){
+  if(carrito.length > 1){//si carrito tiene mas de 1 elemento 
     totalCarrito = carritoTmp.reduce(
       (total, prod) => total.precio * total.cantidad + prod.precio * prod.cantidad
     )
-  }else if(carrito.length === 1){
+  }else if(carrito.length === 1){ //solamente si tiene un solo elemento
     totalCarrito = carrito[0].precio * carrito[0].cantidad
   }
 
@@ -38,6 +38,25 @@ export default function CheckoutView() {
             <small className="text-danger">El nombre es obligatorio</small>
           )}
         </div>
+        <div>
+          <label className="form-label">Dirección</label>
+          <input 
+            type="text" 
+            name="direccion" 
+            className="form-control" 
+            ref={register({required:true, minLength:8, maxLength:20})}
+          />
+          {errors.direccion && errors.direccion.type === "required" && (
+            <small className="text-danger">La dirección es obligatoria</small>
+          )}
+          {errors.direccion && errors.direccion.type === "minLength" && (
+            <small className="text-danger">La Longitud mínima es 8</small>
+          )}
+          {errors.direccion && errors.direccion.type === "maxLength" && (
+            <small className="text-danger">La Longitud máxima es 20</small>
+          )}
+        </div>
+
         <button type="submit" className="btn btn-success btn-lg mt-3">
           Realizar Compra
         </button>
