@@ -28,7 +28,7 @@ const CarritoContextProvider = (props) => {
     let carritoTmp = [...carrito];
     carritoTmp.splice(indice, 1); //como aquí ya removi el producto a retirar
     setCarrito(carritoTmp); //actualizo el estado con el carrito removido
-  };
+  }
 
   return (
     <CarritoContext.Provider

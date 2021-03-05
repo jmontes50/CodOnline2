@@ -11,7 +11,7 @@ import EditarProductoView from "./views/EditarProductoView";
 import RegisterView from "./views/RegisterView";
 import LoginView from "./views/LoginView";
 import CarritoView from "./views/CarritoView"
-
+import CheckoutView from "./views/CheckoutView"
 export default function Routes() {
   const { userId } = useContext(AuthFireContext); //con esto ya tengo el userId
 
@@ -26,6 +26,7 @@ export default function Routes() {
       <Route path="/editarproducto/:id" exact component={EditarProductoView} />
       <Route path="/registrarse" exact component={RegisterView} />
       <Route path="/carrito" exact component={CarritoView} />
+      <Route path="/checkout" exact component={CheckoutView} />
       <Route
         path="/dashboard"
         exact
