@@ -1,8 +1,13 @@
 import React, { useContext, useState } from "react";
 import { CarritoContext } from "../context/carritoContext";
 import { useForm } from "react-hook-form"
+import {MapContainer, TileLayer, Marker, Popup, MapConsumer} from 'react-leaflet'
+import L from 'leaflet' //se refiere a toda la lirebria de leaflet
 
 export default function CheckoutView() {
+
+  const[coords, setCoords] = useState([-16.42, -71.51]) //coordenadas marcador
+
   const { carrito } = useContext(CarritoContext);
   let carritoTmp = [...carrito];
   let totalCarrito = 0
@@ -22,6 +27,7 @@ export default function CheckoutView() {
 
   let escucharSubmit = (data) => {
     console.log(data)
+    //esta funcion se encarga de manejar el submit
   }
 
   return (
@@ -61,6 +67,35 @@ export default function CheckoutView() {
           Realizar Compra
         </button>
       </form>
+
+      <MapContainer
+        center={[-16.42, -71.51]}
+        zoom={18}
+        style={{height:'500px'}}
+      >
+        <TileLayer
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        
+        <MapConsumer>
+          {
+            (map) => {
+              map.on("click", (e) => {
+                const {lat, lng} = e.latlng
+                setCoords([lat, lng])
+                // L.marker([lat,lng]).addTo(map)
+              })
+              return null
+            }
+          }
+        </MapConsumer>
+        <Marker position={coords}>
+          <Popup>
+            <p>Café aquí</p>
+          </Popup>
+        </Marker>
+      </MapContainer>
     </div>
   )
 }
