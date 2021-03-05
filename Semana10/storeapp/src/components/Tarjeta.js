@@ -7,7 +7,7 @@ export default function Tarjeta({ producto }) {
   return (
     <div className="col-sm-12 col-lg-6 col-xl-3">
       <div className="card mb-2">
-        <img src={producto.imagen} alt="..." />
+        <img src={producto.imagen} alt="..." className="card-img-top"/>
         <div className="card-body">
           <h5 className="card-title">{producto.nombre}</h5>
           <p className="fw-bold">S/ {producto.precio}</p>

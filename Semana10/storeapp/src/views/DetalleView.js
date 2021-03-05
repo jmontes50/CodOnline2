@@ -64,6 +64,9 @@ export default function DetalleView(props) {
         //si estaCargando es false
         <div className="mt-3">
           <div className="row">
+            <div className="col-12 titulo-detalle mb-3">
+              <h1>{miProducto.nombre}</h1>
+            </div>
             <div className="col-md-12 col-xl-6">
               <img
                 src={miProducto.imagen}
@@ -71,8 +74,8 @@ export default function DetalleView(props) {
                 className="img-fluid"
               />
             </div>
-            <div className="col-md-12 col-xl-6">
-              <h1 className="display-6">{miProducto.nombre}</h1>
+            <div className="col-md-12 col-xl-6 contenido-detalle">
+              {/* <h1 className="display-6">{miProducto.nombre}</h1> */}
               <p className="lead">{miProducto.descripcion}</p>
               <p>Precio: S/ {miProducto.precio}</p>
               <p className="fw-bold">Comprar</p>

@@ -5,3 +5,29 @@
 .card{
   font-family: 'Spartan', sans-serif;
 }
+
+.card-img-top{
+  width:100%;
+  height: 15vw;
+  object-fit: cover;
+}
+
+/*ESTA PARTE ES DETALLE VIEW*/
+
+.titulo-detalle{
+  height:100px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Spartan', sans-serif;
+  color:white;
+  background-color: black;
+}
+
+.titulo-detalle h1{
+  transform: translateY(5px);
+}
+
+.contenido-detalle{
+  font-family: 'Spartan', sans-serif;
+}
