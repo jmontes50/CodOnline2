@@ -8,14 +8,14 @@ export default function Tarjeta({ producto }) {
     <div className="col-sm-12 col-lg-6 col-xl-3">
       <div className="card mb-2">
         <img src={producto.imagen} alt="..." />
-        <div className="card-body d-grid justify-content-center">
+        <div className="card-body">
           <h5 className="card-title">{producto.nombre}</h5>
-          <p className="font-weight-bold">Precio: S/ {producto.precio}</p>
+          <p className="fw-bold">S/ {producto.precio}</p>
         </div>
         <div className="card-footer">
           <div className="d-grid">
             <Link
-              className="btn btn-primary btn-sm btn-flores"
+              className="btn btn-dark btn-sm"
               to={`/detalle/${producto._id}`}
               // si quiero definir estilos con style, se pone como si fuera JS, en forma de un objeto
               style={{ borderRadius: "20px" }}

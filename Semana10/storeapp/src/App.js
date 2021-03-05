@@ -6,6 +6,8 @@ import AuthContextProvider from "./context/authFireContext";
 import CarritoContextProvider from "./context/carritoContext";
 import TopNav from "./components/TopNav";
 
+import "./App.css"
+
 export default function App() {
   return (
     <Router>
