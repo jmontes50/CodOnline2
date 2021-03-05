@@ -3,7 +3,7 @@ import {CarritoContext} from '../context/carritoContext'
 
 export default function CarritoView() {
   //Rrecuerden, useContext obtiene lo que provea el provider pero necesita saber que contexto Utilizar
-  const {carrito, anadirProducto} = useContext(CarritoContext)
+  const {carrito, anadirProducto, removerProducto} = useContext(CarritoContext)
 
   return (
     <div>
@@ -26,7 +26,10 @@ export default function CarritoView() {
               <td>{item.cantidad}</td>
               <td>{item.precio * item.cantidad}</td>
               <td>
-                <button className="btn btn-danger btn-sm">
+                <button 
+                  className="btn btn-danger btn-sm" 
+                  onClick={() => {removerProducto(i)}}
+                >
                   <i className="fas fa-trash"></i>
                 </button>
               </td>
