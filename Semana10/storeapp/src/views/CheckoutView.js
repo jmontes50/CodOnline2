@@ -5,9 +5,15 @@ import { useForm } from "react-hook-form"
 export default function CheckoutView() {
   const { carrito } = useContext(CarritoContext);
   let carritoTmp = [...carrito];
-  let totalCarrito = carritoTmp.reduce(
-    (total, prod) => total.precio * total.cantidad + prod.precio * prod.cantidad
-  )
+  let totalCarrito = 0
+  if(carrito.length > 1){
+    totalCarrito = carritoTmp.reduce(
+      (total, prod) => total.precio * total.cantidad + prod.precio * prod.cantidad
+    )
+  }else if(carrito.length === 1){
+    totalCarrito = carrito[0].precio * carrito[0].cantidad
+  }
+
     //trayendo las herramientas de hook forms
     //register = pàra registrar mis input
     //handleSUbmit es una funcion que maneja el onSubmit del form
