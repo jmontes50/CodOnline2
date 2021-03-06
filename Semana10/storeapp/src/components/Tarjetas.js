@@ -21,12 +21,24 @@ export default function Tarjetas() {
         <Tarjeta producto={prod} key={i} />
       ))}
       <div className="col-12 d-flex justify-content-between my-3">
-        <button className="btn btn-dark" onClick={()=>{setMostrar(mostrar - 8)}}>
-          Anterior
-        </button>
-        <button className="btn btn-dark" onClick={()=>{setMostrar(mostrar + 8)}}>
-          Siguiente
-        </button>
+        {mostrar === 0 ? //mostrar es 0?
+          null :  //si es 0, no muestro el boton
+          ( //si es mayor que 0, muestro el boton
+            <button className="btn btn-dark" onClick={()=>{setMostrar(mostrar - 8)}}>
+              Anterior
+            </button>
+          )
+        }
+        <div>{/*div vacio para que no se desacomoden los botones*/}</div>
+        {
+          productos.length - mostrar <= 8 ? //hago la resta y si es <= 8, significa que ya no hay mas productos que mostrar después
+            null :
+            (
+              <button className="btn btn-dark" onClick={()=>{setMostrar(mostrar + 8)}}>
+                Siguiente
+              </button>
+            )
+        }
       </div>
     </div>
   );
