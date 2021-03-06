@@ -30,4 +30,32 @@
 
 .contenido-detalle{
   font-family: 'Spartan', sans-serif;
+  color:gray;
+}
+
+.contenido-detalle h6{
+  font-weight: bold;
+  color:#444;
+}
+
+.contenido-detalle .lead{
+  font-size:16px;
+}
+
+.detalle-carrito{
+  height:60px;
+  display:flex;
+  align-items: center;
+}
+
+.detalle-carrito span{
+  color:black;
+  font-size:20px;
+  font-weight: bold;
+  margin-right:10px;
+}
+
+.detalle-carrito button{
+  height:60px;
+  transform: translateY(-5px);
 }

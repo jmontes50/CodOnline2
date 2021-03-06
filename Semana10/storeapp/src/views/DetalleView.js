@@ -76,9 +76,10 @@ export default function DetalleView(props) {
             </div>
             <div className="col-md-12 col-xl-6 contenido-detalle">
               {/* <h1 className="display-6">{miProducto.nombre}</h1> */}
+              <h6>DESCRIPCIÓN</h6>
               <p className="lead">{miProducto.descripcion}</p>
-              <p>Precio: S/ {miProducto.precio}</p>
-              <p className="fw-bold">Comprar</p>
+              <p>Precio por unidad: S/ {miProducto.precio}</p>
+              {/* <p className="fw-bold">Comprar</p> */}
               <div>
                 <button 
                   className="btn btn-outline-dark btn-sm" 
@@ -87,7 +88,7 @@ export default function DetalleView(props) {
                   <i className="fas fa-plus"></i>
                 </button>
 
-                <span className="font-weight-bold mx-2">Cantidad: {cantidad}</span>
+                <span className="mx-2">Cantidad: {cantidad}</span>
 
                 <button 
                   className="btn btn-outline-dark btn-sm" 
@@ -96,9 +97,15 @@ export default function DetalleView(props) {
                  <i className="fas fa-minus"></i>
                 </button>
               </div>
-              <button className="btn btn-danger btn-lg mt-2" onClick={()=>{anadirProductoAContext()}}>
-                Añadir al Carrito
-              </button>
+              <hr/>
+              <div className="detalle-carrito">
+                <span>Total: S/ {cantidad * miProducto.precio}</span>
+                <button className="btn btn-dark mt-2" onClick={()=>{anadirProductoAContext()}}>
+                  AÑADIR AL CARRITO
+                </button>
+              </div>
+              
+              <hr/>
             </div>
           </div>
         </div>
