@@ -33,7 +33,7 @@
   color:gray;
 }
 
-.contenido-detalle h6{
+.contenido-detalle h5{
   font-weight: bold;
   color:#444;
 }
@@ -58,4 +58,13 @@
 .detalle-carrito button{
   height:60px;
   transform: translateY(-5px);
+}
+
+.detalle-info{
+  display:flex;
+  justify-content: space-between;
+}
+
+.detalle-info div i{
+  margin-right:8px;
 }

@@ -64,7 +64,7 @@ export default function DetalleView(props) {
         //si estaCargando es false
         <div className="mt-3">
           <div className="row">
-            <div className="col-12 titulo-detalle mb-3">
+            <div className="col-12 titulo-detalle mb-4">
               <h1>{miProducto.nombre}</h1>
             </div>
             <div className="col-md-12 col-xl-6">
@@ -76,7 +76,7 @@ export default function DetalleView(props) {
             </div>
             <div className="col-md-12 col-xl-6 contenido-detalle">
               {/* <h1 className="display-6">{miProducto.nombre}</h1> */}
-              <h6>DESCRIPCIÓN</h6>
+              <h5 className="mb-2">DESCRIPCIÓN</h5>
               <p className="lead">{miProducto.descripcion}</p>
               <p>Precio por unidad: S/ {miProducto.precio}</p>
               {/* <p className="fw-bold">Comprar</p> */}
@@ -98,13 +98,27 @@ export default function DetalleView(props) {
                 </button>
               </div>
               <hr/>
-              <div className="detalle-carrito">
+              <div className="detalle-carritoº">
                 <span>Total: S/ {cantidad * miProducto.precio}</span>
                 <button className="btn btn-dark mt-2" onClick={()=>{anadirProductoAContext()}}>
                   AÑADIR AL CARRITO
                 </button>
               </div>
-              
+              <hr/>
+              <div className="detalle-info">
+                <div>
+                  <i className="fas fa-shipping-fast fa-lg"></i>
+                  <span>Envio y Entrega</span>
+                </div>
+                <div>
+                  <i className="fas fa-exchange-alt fa-lg"></i>
+                  <span>Cambios y Devoluciones</span>
+                </div>
+                <div>
+                  <i className="fab fa-mailchimp fa-lg"></i>
+                  <span>Haz una pregunta</span>
+                </div>
+              </div>
               <hr/>
             </div>
           </div>
