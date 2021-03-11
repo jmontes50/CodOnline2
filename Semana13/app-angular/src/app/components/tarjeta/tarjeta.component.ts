@@ -11,12 +11,16 @@ export class TarjetaComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  //interporacion
   titulo = "Hola Tarjeta"
 
+  //property binding
   src = "https://picsum.photos/200"
 
+  nombre = ""
+
+  //event binding
   abrirAlerta(){
-    alert("mensaje desde la tarjeta")
+    alert("mensaje desde la tarjeta " + this.nombre)
   }
 }

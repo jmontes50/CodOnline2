@@ -8,6 +8,12 @@
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, odit.
       </p>
+      <!-- 2way data binding -->
+      <input 
+        type="text"
+        [(ngModel)]="nombre"
+      />
+      <!-- event binding -->
       <button 
         class="btn btn-primary" 
         (click)="abrirAlerta()"

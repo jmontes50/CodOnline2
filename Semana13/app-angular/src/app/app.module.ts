@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {FormsModule} from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +20,8 @@ import { TarjetaComponent } from './components/tarjeta/tarjeta.component'
   imports: [
     //Van a ir los modulos que vamos a utilizar
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],//servicios, proveedores de datos
   bootstrap: [AppComponent]//es el componente con el que va a iniciar, equivale a un App.js
