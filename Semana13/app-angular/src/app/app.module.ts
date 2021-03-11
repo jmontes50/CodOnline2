@@ -5,14 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 //aquí importamos las cosas que vayamos necesitando
 import {MicomponenteComponent} from "./components/micomponente/micomponente.component";
-import { NavbarComponent } from './components/navbar/navbar.component'
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { TarjetaComponent } from './components/tarjeta/tarjeta.component'
 
 @NgModule({
   declarations: [
     // aca ván todos los componentes
     AppComponent,
     MicomponenteComponent,
-    NavbarComponent
+    NavbarComponent,
+    TarjetaComponent
   ],
   imports: [
     //Van a ir los modulos que vamos a utilizar

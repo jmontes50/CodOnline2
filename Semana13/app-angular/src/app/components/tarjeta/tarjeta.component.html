@@ -1,0 +1,19 @@
+<div class="col-3">
+  <div class="card">
+    <!-- property binding, ts -> html -->
+    <img class="img-card-top" [src]="src"/>
+    <div class="card-text">
+      <!-- Interpolación -->
+      <h4>{{titulo}}</h4>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, odit.
+      </p>
+      <button 
+        class="btn btn-primary" 
+        (click)="abrirAlerta()"
+      >
+        Mostrar Mensaje
+      </button>
+    </div>
+  </div>
+</div>
