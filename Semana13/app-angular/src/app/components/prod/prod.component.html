@@ -1,0 +1,22 @@
+<div class="card mb-2">
+  <!-- property binding -->
+  <img [src]="prod.imagen" class="img-card-top"/>
+  <div class="card-body">
+    <h5 class="card-title">
+      <!-- interpolacion -->
+      {{prod.nombre}}
+    </h5>
+    <p class="card-text">
+      Descripcion: {{prod.descripcion}}
+    </p>
+    <button class="btn btn-primary" >
+      Ver Info
+    </button>
+    <button 
+      class="btn btn-danger" 
+      (click)="borrar()"
+    >
+      Eliminar
+    </button>
+  </div>
+</div>

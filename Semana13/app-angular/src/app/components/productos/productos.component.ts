@@ -20,7 +20,8 @@ export class ProductosComponent implements OnInit {
   obtenerProductos(){
     this.subscripcionProductos = this._sProducto.getProductos()
     .subscribe((datos) => {
-      console.log(datos)
+      // console.log(datos)
+      this.misProductos = datos
     })
   }
 
@@ -28,6 +29,11 @@ export class ProductosComponent implements OnInit {
     //este método es el equivalente a un useEffect([])
     //es el lugar para hacer peticiones y obtener datos
     this.obtenerProductos()
+  }
+
+  borrarProducto(producto){
+    console.log(producto)
+    alert("Hizo Click en borrar Producto")
   }
 
 }

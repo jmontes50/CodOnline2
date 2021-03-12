@@ -9,7 +9,8 @@ import { AppComponent } from './app.component';
 import {MicomponenteComponent} from "./components/micomponente/micomponente.component";
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
-import { ProductosComponent } from './components/productos/productos.component'
+import { ProductosComponent } from './components/productos/productos.component';
+import { ProdComponent } from './components/prod/prod.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProductosComponent } from './components/productos/productos.component'
     MicomponenteComponent,
     NavbarComponent,
     TarjetaComponent,
-    ProductosComponent
+    ProductosComponent,
+    ProdComponent
   ],
   imports: [
     //Van a ir los modulos que vamos a utilizar
