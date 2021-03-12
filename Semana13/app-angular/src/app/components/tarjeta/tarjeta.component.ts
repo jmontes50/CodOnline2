@@ -12,7 +12,7 @@ export class TarjetaComponent implements OnInit {
   ngOnInit(): void {
   }
   //interporacion
-  titulo = "Hola Tarjeta"
+  titulo = "Hola Angular"
 
   //property binding
   src = "https://picsum.photos/200"
