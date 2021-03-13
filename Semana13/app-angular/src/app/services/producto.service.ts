@@ -20,6 +20,11 @@ export class ProductoService {
     return this._sHttp.get(this.url)
   }
 
+  createProducto(nuevoProducto:any):Observable<any> {
+    //.post(url, datos_a_enviar)
+    return this._sHttp.post(this.url, nuevoProducto)
+  }
+
   deleteProducto(id:string):Observable<any>{
     //esto va a utiulizar el HttpCliente previo para hacer una peticion de tipo delete
     return this._sHttp.delete(`${this.url}/${id}`)

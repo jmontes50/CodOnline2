@@ -1,0 +1,42 @@
+<h1>Crear nuevo producto</h1>
+<div>
+  <div>
+    <label class="form-label">
+      Nombre Producto
+    </label>
+    <input 
+      type="text"
+      class="form-control"
+      placeholder="Ej. Smartphone"
+      [(ngModel)] = "nuevoProducto.nombre"
+    />
+  </div>
+  <div>
+    <label class="form-label">
+      Descripción
+    </label>
+    <input 
+      type="text"
+      class="form-control"
+      placeholder="Ej. Xiaomi Redmi 9"
+      [(ngModel)] = "nuevoProducto.descripcion"
+    >
+  </div>
+  <div>
+    <label class="form-label">
+      Imagen
+    </label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ej. picsum.com/photo.jpg"
+      [(ngModel)] = "nuevoProducto.imagen"
+    />
+  </div>
+  <button 
+    class="btn btn-primary"
+    (click)="crearTarea()"
+  >
+    Crear Producto
+  </button>
+</div>

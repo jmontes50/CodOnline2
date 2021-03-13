@@ -10,7 +10,8 @@ import {MicomponenteComponent} from "./components/micomponente/micomponente.comp
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
 import { ProductosComponent } from './components/productos/productos.component';
-import { ProdComponent } from './components/prod/prod.component'
+import { ProdComponent } from './components/prod/prod.component';
+import { CrearproductoComponent } from './components/crearproducto/crearproducto.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProdComponent } from './components/prod/prod.component'
     NavbarComponent,
     TarjetaComponent,
     ProductosComponent,
-    ProdComponent
+    ProdComponent,
+    CrearproductoComponent
   ],
   imports: [
     //Van a ir los modulos que vamos a utilizar

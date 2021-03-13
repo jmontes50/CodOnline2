@@ -1,11 +1,15 @@
-<div 
+<div class="row">
+
+  <div 
   *ngFor="let prod of misProductos"
   class="col-12 col-lg-6 col-xl-3"
->
-  <app-prod 
-    [prod]="prod" 
-    (productoClick) = "borrarProducto($event)"
   >
-  </app-prod>
-  <!-- <div>{{prod.nombre}}</div> -->
+    <app-prod 
+      [prod]="prod" 
+      (productoClick) = "borrarProducto($event)"
+    >
+    </app-prod>
+    <!-- <div>{{prod.nombre}}</div> -->
+  </div>
+
 </div>
