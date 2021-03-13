@@ -19,4 +19,9 @@ export class ProductoService {
     // .get(URL) necesita la URL como parametro
     return this._sHttp.get(this.url)
   }
+
+  deleteProducto(id:string):Observable<any>{
+    //esto va a utiulizar el HttpCliente previo para hacer una peticion de tipo delete
+    return this._sHttp.delete(`${this.url}/${id}`)
+  }
 }

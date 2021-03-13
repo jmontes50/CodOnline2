@@ -22,6 +22,7 @@ export class ProductosComponent implements OnInit {
     .subscribe((datos) => {
       // console.log(datos)
       this.misProductos = datos
+      console.log(this.misProductos)
     })
   }
 
@@ -32,8 +33,23 @@ export class ProductosComponent implements OnInit {
   }
 
   borrarProducto(producto){
-    console.log(producto)
-    alert("Hizo Click en borrar Producto")
+    // console.log(producto)
+    this._sProducto.deleteProducto(producto.id)
+    //la 1era funcion del subscribe equivaldria
+    //al .then()
+    .subscribe(() => {
+      alert("Producto Eliminado")
+      this.obtenerProductos()
+    },
+    //la 2da funcion que reciba subscribe, será
+    //para manejar el error que pueda ocurrir - equivaldría al catch()
+    (error) => {
+      console.log(error)
+      alert("Hubo un error al eliminar")
+      //volvemos a solicitar todos nuestros productos para que se actualice la lista
+      this.obtenerProductos()
+    })
+
   }
 
 }
